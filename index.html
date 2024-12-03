@@ -1,0 +1,8 @@
+<script>
+    // 地図にピンを表示
+    fetchTrashBins().then(data => {
+        data.forEach(bin => {
+            L.marker([bin.lat, bin.lng]).addTo(map).bindPopup(bin.description);
+        });
+    });
+</script>
